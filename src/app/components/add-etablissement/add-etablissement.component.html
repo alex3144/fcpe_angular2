@@ -1,0 +1,31 @@
+	<!-- The new contact block -->
+<div class="row" style="margin-top: 50px;">
+  <div class="offset-m3 col s12 m6">
+    <div class="card" style="padding: 50px;">
+        <span class="card-title" style ="margin-left: 30%;">Ajouter un etablissement </span>
+        <form name="new-contact-form" style="padding: 10px;">
+          <div class="form-group row">
+            <label for="name" class="col-2 col-form-label">Name</label>
+            <div class="col-6">
+              <input class="form-control" type="text" id="name" name = "nom" [(ngModel)]="Etablissement.nom">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-2 col-form-label">Ville</label>
+            <div class="col-6">
+              <input class="form-control" type="text" id="ville" name = "ville" [(ngModel)]="Etablissement.ville">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-2 col-form-label">academie</label>
+            <div class="col-6">
+              <input class="form-control" type="text" id="academy" name = "academie" [(ngModel)]="Etablissement.academie">
+            </div>
+          </div>
+          <div class="card-action" style="    text-align:center;">
+             <button class="btn btn-primary" (click) = "addEtablissement()"> Ajouter </button>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>

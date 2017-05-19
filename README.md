@@ -1,5 +1,5 @@
 # fcpe application
-A simple contacts manager with Angular 2
+API 
 
 # Installation
 ```

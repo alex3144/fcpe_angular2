@@ -1,4 +1,4 @@
-# ng-contacts
+# fcpe application
 A simple contacts manager with Angular 2
 
 # Installation

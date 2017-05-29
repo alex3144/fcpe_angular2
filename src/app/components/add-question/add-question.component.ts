@@ -66,4 +66,11 @@ export class AddQuestionComponent implements OnInit {
   public unChanged() {
     this.trans = false;
   }
+
+  /**
+   * retourQtion
+   */
+  public retourQtion() {
+    this.router.navigate(['/questions']);
+  }
 }

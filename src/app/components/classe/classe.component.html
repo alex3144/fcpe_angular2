@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+  <div class="row">
+
+    <!-- The list of classes -->
+    <div class="col-6">
+      <h3 style="text-align: center;">Liste des classes<a (click)="addClass()" class="btn-floating btn-large waves-effect waves-light pulse blue" style="margin-left:10%"><i class="material-icons">add</i></a></h3>
+      <div class="col-6" style="  max-width: 25%;"><ng2-completer  [(ngModel)]="searchStr" [autoMatch]= "true" [datasource]="dataService" [minSearchLength]="0" placeholder="Recherche ..."></ng2-completer></div>
+      <table class="table highlight ">
+        <thead>
+        <tr>
+          <td><strong>Nom</strong></td>
+          <td><strong>Serie</strong></td>
+          <td><strong>Niveau</strong></td>
+          <td><strong>Etablissement</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let classe of collection | paginate: { itemsPerPage: 10, currentPage: p } | filterBy:{nom: searchStr}"
+            (click)="goClasse(classe.id)">
+          <td>{{ classe.nom}}</td>
+          <td>{{ classe.serie}}</td>
+          <td>{{ classe.niv}}</td>
+          <td>{{ etablissement.nom}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

@@ -88,6 +88,13 @@ export class AddQuestionnaireComponent implements OnInit {
   public onSelected(item: CompleterItem) {
     this.selectedQtion = item?item.title:"";
   }
+
+  /**
+   * retourQtionaire
+   */
+  public retourQtionaire() {
+    this.router.navigate(['/questionnaires']);
+  }
   ngOnInit() {
     
   }

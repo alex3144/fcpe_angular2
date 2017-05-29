@@ -26,6 +26,9 @@ import { CampagneComponent } from './components/campagne/campagne.component';
 import { CampagneService } from "app/services/campagne/campagne.service";
 import { HomeAuthComponent } from './components/home-auth/home-auth.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { AddClasseComponent } from './components/add-classe/add-classe.component';
+import { ClasseComponent } from './components/classe/classe.component';
+import { ClasseService } from "app/services/classe/classe.service";
 
 const appRoutes = [
   { path: 'etablissements', component: EtablissementComponent, },
@@ -38,6 +41,8 @@ const appRoutes = [
   { path: 'campagnes', component: CampagneComponent },
   { path: 'campagnes/create', component: AddCampagneComponent },
   { path: 'formulaire', component: FormulaireComponent },
+  { path: 'classes/create', component: AddClasseComponent },
+  { path: 'classes', component: ClasseComponent },
   { path: '', component: HomeAuthComponent}
 ];
 
@@ -56,6 +61,8 @@ const appRoutes = [
     CampagneComponent,
     HomeAuthComponent,
     FormulaireComponent,
+    AddClasseComponent,
+    ClasseComponent,
   ],
   imports: [
     Ng2CompleterModule,
@@ -72,6 +79,8 @@ const appRoutes = [
     QuestionService,
     QuestionnaireService,
     CampagneService,
+    ClasseService
+
   ]
   ,
   bootstrap: [AppComponent]

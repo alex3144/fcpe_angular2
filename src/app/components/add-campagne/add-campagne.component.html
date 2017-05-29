@@ -86,13 +86,15 @@
       <li class="collection-item" *ngFor="let camp of cgnes" >   {{camp}} <a class="waves-effect waves-light btn" (click)="suppCamp(camp)" style="background-color: violet"> supprimer</a></li>
     </ul>
   </div>
-
+   <button class="btn waves-effect waves-light" name="action" (click)="retourCgne()" style="background-color: violet">Retour
+            </button>
   <button class="btn waves-effect waves-light" type="submit" name="action" (click)="AddCampagne()" style="background-color: violet">Sauvegarder
               <i class="material-icons right">save</i>
             </button>
   <button class="btn waves-effect waves-light" (click)="voirForm()" style="background-color: violet">Voir le formulaire
               <i class="material-icons right">visibility</i>
             </button>
+
   </form>
   </div>
   </div>

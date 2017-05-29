@@ -46,6 +46,13 @@ export class AddEtablissementComponent implements OnInit {
 	  }
 	};
 
+	/**
+	 * retour
+	 */
+	public retourEtab() {
+		this.router.navigate(['/etablissements']);
+	}
+
   ngOnInit() {
   }
 

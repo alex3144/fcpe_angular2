@@ -55,6 +55,10 @@ export class AddCampagneComponent implements OnInit {
   public voirForm() {
     this.router.navigate(['formulaire']);
   }
+
+  public retourCgne(){
+    this.router.navigate(['/campagnes']);
+  }
   ngOnInit() {
   }
 

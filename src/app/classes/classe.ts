@@ -1,5 +1,3 @@
-export class Classe {
-
     	
 export class Classe {
 
@@ -69,10 +67,6 @@ export class Classe {
 		this.serie = value;
 	}
     
-
-
-   
-
 }
 
 

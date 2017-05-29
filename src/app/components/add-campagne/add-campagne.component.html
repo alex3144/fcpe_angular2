@@ -11,13 +11,13 @@
 
 
         <div class="input-field col s6">
-          <input  id="etab" type="text" class="validate" name = "nom" [(ngModel)]="Etablissement.nom">
+          <input  id="etab" type="text" class="validate" name = "nomE" [(ngModel)]="Etablissement.nomE">
           <label for="etab"><h6>Nom de l'établissement</h6></label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input  id="con" type="text" class="validate" name = "nom" [(ngModel)]="Classe.nom">
+          <input  id="con" type="text" class="validate" name = "nomC" [(ngModel)]="Classe.nom">
           <label for="con"><h6>Nom de la classe</h6></label>
         </div>
 
@@ -83,14 +83,14 @@
       <li class="collection-header">
         <h6>Questionnaire</h6>
       </li>
-      <li class="collection-item" *ngFor="let camp of cgnes" [(ngModel)]="camp">   {{camp}} <a class="waves-effect waves-light btn" (click)="suppCamp(camp)" style="background-color: violet"> supprimer</a></li>
+      <li class="collection-item" *ngFor="let camp of cgnes" >   {{camp}} <a class="waves-effect waves-light btn" (click)="suppCamp(camp)" style="background-color: violet"> supprimer</a></li>
     </ul>
   </div>
 
   <button class="btn waves-effect waves-light" type="submit" name="action" (click)="AddCampagne()" style="background-color: violet">Sauvegarder
               <i class="material-icons right">save</i>
             </button>
-  <button class="btn waves-effect waves-light" type="submit" (click)="voirForm()" style="background-color: violet">Voir le formulaire
+  <button class="btn waves-effect waves-light" (click)="voirForm()" style="background-color: violet">Voir le formulaire
               <i class="material-icons right">visibility</i>
             </button>
   </form>

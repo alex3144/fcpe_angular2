@@ -46,7 +46,7 @@
         <h6>Liste des questions <span class="new badge" style="background-color: violet;">{{qtionaires.length}}</span></h6>
         <ol class="collection">
         
-        <li class="collection-item" *ngFor="let qtion of qtionaires" [(ngModel)]="qtion">  {{qtion}} <a class="destroy btn" (click)="suppQtion(qtion)" style="background-color: violet; margin-left: 55vw"><i class="Tiny material-icons">delete</i></a> </li>
+        <li class="collection-item" *ngFor="let qtion of qtionaires">  {{qtion}} <a class="destroy btn" (click)="suppQtion(qtion)" style="background-color: violet; margin-left: 55vw"><i class="Tiny material-icons">delete</i></a> </li>
       </ol>
       </div>
       <button class="btn waves-effect waves-light" type="submit" name="action" (click)="addQuestionnaire()" style="background-color: violet">Sauvegarder

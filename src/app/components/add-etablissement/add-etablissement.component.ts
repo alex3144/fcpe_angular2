@@ -14,9 +14,14 @@ export class AddEtablissementComponent implements OnInit {
 	public etablissements = [];
 	public id;
 	public Etablissement = {
-	  nom: "",
-	  ville: "",
-	  academie: ""
+	   nom: "",
+     academie: "",
+     ville: "",
+     numrue: "",
+     nomrue : "",
+     cp: "",
+     departement : "",
+     typeetablissement : ""
 	};
   	constructor(public EtablissementService: EtablissementService , public AddEtablissementService: AddEtablissementService, private router: Router) { }
 
@@ -29,7 +34,9 @@ export class AddEtablissementComponent implements OnInit {
 	  this.EtablissementService.getEtablissements().subscribe(etabs => 
 	  		this.id = etabs.length
 	  	);
-	    let etab = new Etablissement(this.id, this.Etablissement.nom,  this.Etablissement.ville,  this.Etablissement.academie);
+	    let etab = new Etablissement(this.id, this.Etablissement.nom,  this.Etablissement.academie, 
+			this.Etablissement.ville,  this.Etablissement.numrue, this.Etablissement.nomrue, 
+			this.Etablissement.cp, this.Etablissement.departement, this.Etablissement.typeetablissement,);
 	    console.log(etab)
 	    this.AddEtablissementService.addEtablissement(etab).subscribe((etab) => {
 	      // Add the contact in the contacts list

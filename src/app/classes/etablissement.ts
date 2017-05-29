@@ -9,59 +9,99 @@
  */
 export class Etablissement {
 
-    public id: number;
-    public nom: string;
-    public academie;
-    public ville: string;
-    public numrue :string;
-    public nomrue : string;
-    public cp: number;
-    public departement : string;
-    public typeetablissement : string;
+    private id: number;
+    private nom: string;
+    private academie: string;
+    private ville: string;
+    private numrue :string;
+    private nomrue : string;
+    private cp: string;
+    private departement : string;
+    private typeetablissement : string;
     
 
-    /**
-     * Default constructor
-     */
+	constructor($id: number, $nom: string, $academie: string, $ville: string, $numrue: string, $nomrue: string, $cp: string, $departement: string, $typeetablissement: string) {
+		this.id = $id;
+		this.nom = $nom;
+		this.academie = $academie;
+		this.ville = $ville;
+		this.numrue = $numrue;
+		this.nomrue = $nomrue;
+		this.cp = $cp;
+		this.departement = $departement;
+		this.typeetablissement = $typeetablissement;
+	}
+    
+	public get $id(): number {
+		return this.id;
+	}
 
-    constructor(id: number, nom: string, ville: string, academie) {
-        this.id = id;
-        this.nom = nom;
-        this.ville = ville;
-        this.academie = academie;
-    }
+	public set $id(value: number) {
+		this.id = value;
+	}
 
+	public get $nom(): string {
+		return this.nom;
+	}
 
-    getid(): number {
-        return this.id;
-    }
+	public set $nom(value: string) {
+		this.nom = value;
+	}
 
-    getnom(): string {
-        return this.nom;
-    }
+	public get $academie(): string {
+		return this.academie;
+	}
 
-    getville(): string {
-        return this.ville;
-    }
+	public set $academie(value: string) {
+		this.academie = value;
+	}
 
-    getacademie() {
-        return this.academie;
-    }
+	public get $ville(): string {
+		return this.ville;
+	}
 
+	public set $ville(value: string) {
+		this.ville = value;
+	}
 
-    setid(value: number) {
-        this.id = value;
-    }
+	public get $numrue(): string {
+		return this.numrue;
+	}
 
-    setnom(value: string) {
-        this.nom = value;
-    }
+	public set $numrue(value: string) {
+		this.numrue = value;
+	}
 
-    setville(value: string) {
-        this.ville = value;
-    }
+	public get $cp(): string {
+		return this.cp;
+	}
 
-    setacademie(value) {
-        this.academie = value;
-    }
+	public set $cp(value: string) {
+		this.cp = value;
+	}
+
+	public get $nomrue(): string {
+		return this.nomrue;
+	}
+
+	public set $nomrue(value: string) {
+		this.nomrue = value;
+	}
+
+	public get $departement(): string {
+		return this.departement;
+	}
+
+	public set $departement(value: string) {
+		this.departement = value;
+	}
+
+	public get $typeetablissement(): string {
+		return this.typeetablissement;
+	}
+
+	public set $typeetablissement(value: string) {
+		this.typeetablissement = value;
+	}
+    
 }

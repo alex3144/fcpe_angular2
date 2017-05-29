@@ -1,0 +1,75 @@
+<div class="container" style="margin-top: 52px">
+  <h2>Créer une question </h2>
+  <div class="row">
+    <form class="col s12">
+
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="qtion" type="text" class="validate" name="libelle" [(ngModel)]="Question.libelle">
+          <label for="qtion"><strong>Libellé de la question</strong></label>
+        </div>
+
+        <div class="input-field col s6">
+          <input id="ad" type="text" class="validate" name="aide" [(ngModel)]="Question.aide">
+          <label for="ad"><strong>Aide à la question</strong></label>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="input-field col s6">
+          <h6>Type de réponse :</h6>
+          <p>
+            <input id="txt" type="radio" name="type" value="texte libre"  [(ngModel)]="Question.type">
+            <label for="txt" (click)="unChanged()">Texte libre</label>
+          </p>
+          <p>
+            <input id="chx" type="radio" name="type" value="choix multiple" [(ngModel)]="Question.type">
+            <label for="chx"  (click)="changed()">Choix multiple</label>
+          </p>
+        </div>
+        <div class="input-field col s6">
+          <h6>Type :</h6>
+          <p>
+            <input id="gen" type="checkbox" name="generique" value="false" [(ngModel)]="Question.generique">
+            <label for="gen"><strong>Générique</strong></label>
+          </p>
+        </div>
+      </div>
+      <div id = "form" [hidden]="!trans">
+      <div class="row">
+        <div class="input-field col s6">
+          
+          <input  id="chx1" type="text" class="validate" name="choix1" [(ngModel)]="Question.choix1">
+          <label for="chx1"><strong>Choix 1</strong></label>
+        </div>
+
+       <div class="input-field col s6">
+          <input  id="chx2" type="text" class="validate" name="choix2" [(ngModel)]="Question.choix2">
+          <label for="chx2"><strong>Choix 2</strong></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="chx3" type="text" class="validate" name="choix3" [(ngModel)]="Question.choix3">
+          <label for="chx3"><strong>Choix 3</strong></label>
+        </div>
+        <div class="input-field col s6">
+          <input  id="chx4" type="text" class="validate" name="choix4" [(ngModel)]="Question.choix4">
+          <label for="chx4"><strong>Choix 4</strong></label>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <h6>Statut :</h6>
+          <p>
+            <input id="act" type="checkbox" name="actif" value="false" [(ngModel)]="Question.actif">
+            <label for="act"><strong>Actif</strong> </label>
+          </p>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action" (click)="addQuestion()"style="background-color: violet" >Sauvegarder
+    <i class="material-icons right">save</i></button>
+    </form>
+  </div>

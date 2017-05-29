@@ -1,0 +1,33 @@
+<br>
+<div class="container" style="margin-top: 52px">
+
+  <div class="row">
+  
+	<!-- The list of contacts -->
+    <div class="col-6">
+      <h3 style="text-align: center;">Liste des questions<a (click)="addQuestion()" class="btn-floating btn-large waves-effect waves-light pulse blue" style="margin-left:10%"><i class="material-icons">add</i></a></h3>
+      <div class="col-6" style="  max-width: 25%;"><ng2-completer  [(ngModel)]="searchStr" [autoMatch]= "true" [datasource]="dataService" [minSearchLength]="0" placeholder="Recherche ..."></ng2-completer></div>
+      <table class="table highlight ">
+        <thead>
+        <tr>
+          <td><strong>Libelle</strong></td>
+          <td><strong>Type</strong></td>
+          <td><strong>Generique</strong></td>
+          <td><strong>Actif</strong></td>
+          
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let qtion of collection | paginate: { itemsPerPage: 10, currentPage: p } | filterBy:{nom: searchStr}" 
+          (click)="getQuestion(qtion.id)">
+            <td>{{ qtion.libelle}}</td>
+            <td>{{ qtion.type}}</td>
+            <td>{{ qtion.generique}}</td>
+            <td>{{ qtion.actif}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

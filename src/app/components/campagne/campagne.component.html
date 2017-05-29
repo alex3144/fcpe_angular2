@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+  <div class="row">
+
+    <!-- The list of campagnes -->
+    <div class="col-6">
+      <h3 style="text-align: center;">Liste des Campagnes<a (click)="addCampagne()" class="btn-floating btn-large waves-effect waves-light pulse blue" style="margin-left:10%"><i class="material-icons">add</i></a></h3>
+      <div class="col-6" style="  max-width: 25%;"><ng2-completer  [(ngModel)]="searchStr" [autoMatch]= "true" [datasource]="dataService" [minSearchLength]="0" placeholder="Recherche ..."></ng2-completer></div>
+      <table class="table highlight ">
+        <thead>
+        <tr>
+          <td><strong>Nom</strong></td>
+          <td><strong>Date de fin</strong></td>
+          <td><strong>Nom du Conseil de classe</strong></td>
+          <td><strong>Date du Conseil de classe</strong></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let campagne of collection | paginate: { itemsPerPage: 10, currentPage: p } | filterBy:{nom: searchStr}"
+            (click)="goEtablissement(etablissement.id)">
+          <td>{{ campagne.nom}}</td>
+          <td>{{ campagne.dateFin}}</td>
+          <td>{{ campagne.nomCC}}</td>
+          <td>{{ campagne.dateCC}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

@@ -25,9 +25,9 @@ export class EtablissementshowComponent implements OnInit {
 	  	 	// (+) converts string 'id' to a number
 	  	 	.switchMap((params: Params) => this.EtablissementService.getEtablissement(+params['id']))
 	  	 	.subscribe((Etablissement: Etablissement) => {
-	  	 		this.etablissement.nom = Etablissement.nom;
-	  	 		this.etablissement.academie = Etablissement.academie;
-	  	 		this.etablissement.ville = Etablissement.ville;
+	  	 		this.etablissement.nom = Etablissement.$nom;
+	  	 		this.etablissement.academie = Etablissement.$academie;
+	  	 		this.etablissement.ville = Etablissement.$ville;
 	  	 	})
   	}
 

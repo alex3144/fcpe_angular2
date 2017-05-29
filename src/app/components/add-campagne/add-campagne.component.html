@@ -1,0 +1,98 @@
+< <div class="container" style="margin-top: 52px">
+  <h2>Créer une campagne</h2>
+  <div class="row">
+    <form class="col s12">
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="cam" type="text" class="validate" name = "nom" [(ngModel)]="Campagne.nom">
+          <label for="cam"><h6>Nom de la campagne</h6></label>
+        </div>
+
+
+        <div class="input-field col s6">
+          <input  id="etab" type="text" class="validate" name = "nom" [(ngModel)]="Etablissement.nom">
+          <label for="etab"><h6>Nom de l'établissement</h6></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="con" type="text" class="validate" name = "nom" [(ngModel)]="Classe.nom">
+          <label for="con"><h6>Nom de la classe</h6></label>
+        </div>
+
+
+        <div class="input-field col s6">
+          <input  id="cam" type="text" class="validate" name = "nomCC" [(ngModel)]="Campagne.nomCC">
+          <label for="cam"><h6> Nom du conseil de classe </h6></label>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col s6">
+          <h6> Choisir votre trimestre </h6>
+    <p>
+      <input type="radio" id="test1" name = "trimCC" [(ngModel)]="Campagne.trimCC"/>
+      <label for="test1">Trimestre 1</label>
+    </p>
+    <p>
+      <input type="radio" id="test2" name = "trimCC" [(ngModel)]="Campagne.trimCC" />
+      <label for="test2">Trimestre 2</label>
+    </p>
+    <p>
+      <input type="radio" id="test3" name = "trimCC" [(ngModel)]="Campagne.trimCC" />
+      <label for="test3">Trimestre 3</label>
+    </p>
+        </div>
+      <div class="input-field col s6">
+        <h6>Statut :</h6>
+        <p>
+          <input id="act" type="checkbox" name="actif" [(ngModel)]="Campagne.actif">
+          <label for="act">Actif </label>
+        </p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col s6">
+      <label for="dte"><h6>Date de fin de la campagne</h6> </label>
+      <input id="dte" type="date" class="datepicker" name="dateFin" [(ngModel)]="Campagne.dateFin">
+    </div>
+
+    <div class="col s6">
+      <label for="cls"><h6>Date du conseil de classe</h6> </label>
+      <input id="cls" type="date" class="datepicker" name="dateCC" [(ngModel)]="Campagne.dateCC">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="input-field col s6">
+      <h6>Rechercher et ajouter un questionnaire</h6>
+      <div class="input-field">
+        <input id="search" type="search" name="cgneAdd" [(ngModel)]="cgneAdd">
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+      </div>
+    </div>
+    <div class="col s6">
+      <button class="btn-floating btn-large waves-effect waves-light pulse blue" style="margin-left:10%" (click)="campAdd2(cgneAdd)"><i class="material-icons">add</i></button>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h6>Questionnaire</h6>
+      </li>
+      <li class="collection-item" *ngFor="let camp of cgnes" [(ngModel)]="camp">   {{camp}} <a class="waves-effect waves-light btn" (click)="suppCamp(camp)" style="background-color: violet"> supprimer</a></li>
+    </ul>
+  </div>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action" (click)="AddCampagne()" style="background-color: violet">Sauvegarder
+              <i class="material-icons right">save</i>
+            </button>
+  <button class="btn waves-effect waves-light" type="submit" (click)="voirForm()" style="background-color: violet">Voir le formulaire
+              <i class="material-icons right">visibility</i>
+            </button>
+  </form>
+  </div>
+  </div>

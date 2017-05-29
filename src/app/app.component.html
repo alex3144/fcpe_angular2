@@ -1,29 +1,38 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+ 
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
-		<div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Gestion des conseils de classes FCPE</span>
-			<div class = "mdl-layout-spacer"></div>
-		 </div>
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title" routerLink='etablissements'>Gestion des conseils de classes FCPE</span>
+               <a class="mdl-navigation__link right" href="">Deconnexion</a>
+               
+    </div>
   </header>
-	 <div class = "mdl-layout__drawer">
-	 <span class="mdl-layout-title">Welcome to G2C_FCPE</span>
-	 <nav class="mdl-navigation">
-	       <a class="mdl-navigation__link" href="" style="color:blue" >Voir les campagnes</a>
-             <a class="mdl-navigation__link" href="" style="color:blue" >Créer des questionnaires</a>
-             <a class="mdl-navigation__link" href="" style="color:blue" >Visualiser les résultats</a>
-	 </nav>
-	 </div>
-    <main class="mdl-layout__content">
-	      <div class="mdl-tabs mdl-js-tabs">
-          <div class="mdl-tabs__tab-bar">
-		         <a href="#tab5-panel" class="mdl-tabs__tab is-active">Introduction</a>
-             <a routerLink='etablissements' class="mdl-tabs__tab">Adminitration</a>
-             <a class="mdl-tabs__tab">Questionnaire/Questions</a>
-             <a href="#tab3-panel" class="mdl-tabs__tab">Visualisation des résultats</a>
-		         <a href="#tab4-panel" class="mdl-tabs__tab">Gestion des campagnes</a>
-          </div>
-        </div>
+  <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout__drawer" style="background-color: lightblue">
+      <span class="mdl-layout-title">Welcome to G2C_FCPE</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" routerLink='questions/create' style="color: black">Créer une question</a>
+        <a class="mdl-navigation__link" routerLink='questionnaires/create' style="color: black">Créer un questionnaire</a>
+        <a class="mdl-navigation__link" routerLink='campagnes/create' style="color: black">Créer une campagne</a>
+        <a class="mdl-navigation__link" routerLink='campagnes' style="color: black">Voir la liste des campagnes</a>
+        <a class="mdl-navigation__link" routerLink='resultatCampagnes' style="color: black">Voir les résultats d'une campagne</a>
+      </nav>
+    </div>
+  </div>
 
-<router-outlet></router-outlet>
-</main>
-</div>
+    <main class="mdl-layout__content">
+      <div class="mdl-tabs mdl-js-tabs">
+        <div class="mdl-tabs__tab-bar">
+          <a routerLink='' class="mdl-tabs__tab ">Accueil</a>
+          <a routerLink='etablissements' class="mdl-tabs__tab">Etablissements</a>
+          <a routerLink='classes' class="mdl-tabs__tab">Classes</a>
+          <a routerLink='questions' class="mdl-tabs__tab">Questions</a>
+          <a routerLink='questionnaires' class="mdl-tabs__tab">Questionnaires</a>
+          <a routerLink='campagnes' class="mdl-tabs__tab">Gestion des campagnes</a>
+          <a href="#tab4-panel" class="mdl-tabs__tab">Visualisation des résultats</a>  
+        </div>
+      </div>
+
+      <router-outlet></router-outlet>
+    </main>
+  </div>

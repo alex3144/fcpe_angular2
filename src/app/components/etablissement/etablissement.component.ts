@@ -21,9 +21,14 @@ export class EtablissementComponent implements OnInit {
 
 	public collection: any[] = [];
 	public Etablissement = {
-	  nom: "",
-	  ville: "",
-	  academie: ""
+	   nom: "",
+     academie: "",
+     ville: "",
+     numrue: "",
+     nomrue : "",
+     cp: "",
+     departement : "",
+     typeetablissement : ""
 	};
 	public p: number = 1;
 
@@ -39,7 +44,8 @@ export class EtablissementComponent implements OnInit {
 	public getAllEtablissement() {
 	  this.EtablissementService.getEtablissements().subscribe(etabs => 
 	    etabs.forEach(etab => {
-	     this.collection.push(new Etablissement(etab.id, etab.nom, etab.ville, etab.academie))
+	     this.collection.push(new Etablissement(etab.id, etab.nom, etab.academie, etab.ville, etab.numrue,
+			  etab.nomrue, etab.cp, etab.departement, etab.typeetablissement));
 	    }
 	    )
 	  );
